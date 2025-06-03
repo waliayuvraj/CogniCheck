@@ -10,10 +10,19 @@ export default function Home() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Integrate with backend or service as needed
+    try {
+      const res = await fetch('/api/responses', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Failed to save response');
+      setSubmitted(true);
+    } catch (err) {
+      alert('There was an error saving your response. Please try again.');
+    }
   };
 
   return (
