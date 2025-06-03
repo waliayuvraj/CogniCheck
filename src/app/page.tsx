@@ -20,7 +20,7 @@ export default function Home() {
       });
       if (!res.ok) throw new Error('Failed to save response');
       setSubmitted(true);
-    } catch (err) {
+    } catch {
       alert('There was an error saving your response. Please try again.');
     }
   };
@@ -108,7 +108,7 @@ export default function Home() {
                   {/* Optionally add an icon here if you have one */}
                   Submit
                 </button>
-                {submitted && <span className="text-green-600 text-sm mt-2">Thank you! We'll be in touch soon.</span>}
+                {submitted && <span className="text-green-600 text-sm mt-2">Thank you! We&apos;ll be in touch soon.</span>}
               </form>
             </div>
           </div>
