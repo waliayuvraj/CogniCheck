@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Lato, Josefin_Sans } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 
 const lato = Lato({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-lato",
-  display: "swap",
-});
-
-const josefin = Josefin_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-josefin",
   display: "swap",
 });
 

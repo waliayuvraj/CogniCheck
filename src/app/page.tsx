@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import Checkmark from "next/image";
 
 export default function Home() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", occupation: "" });
@@ -129,7 +128,7 @@ export default function Home() {
               {/* Easy Configuration */}
               <div>
                 <h3 className="text-2xl font-bold text-[#20669f] mb-2 text-center">Easy Configuration</h3>
-                <p className="text-base text-black/80 text-center mx-auto">Practitioners securely onboard and configure each client's profile in just a few clicks — setting call schedules, frequency (bi-weekly, monthly, etc) and more.</p>
+                <p className="text-base text-black/80 text-center mx-auto">Practitioners securely onboard and configure each client&apos;s profile in just a few clicks — setting call schedules, frequency (bi-weekly, monthly, etc) and more.</p>
               </div>
               {/* Voice-Based Cognitive Analysis */}
               <div>
@@ -162,7 +161,7 @@ export default function Home() {
               {/* Track Results Over Time */}
               <div>
                 <h3 className="text-2xl font-bold text-[#20669f] mb-2 text-center">Track Results Over Time</h3>
-                <p className="text-base text-black/80 mb-4">After each call, a <span className="font-bold text-[#20669f]">cognitive snapshot</span> is added to the client's timeline. Practitioners can easily monitor trends in:</p>
+                <p className="text-base text-black/80 mb-4">After each call, a <span className="font-bold text-[#20669f]">cognitive snapshot</span> is added to the client&apos;s timeline. Practitioners can easily monitor trends in:</p>
                 <ul className="space-y-2 ml-4 text-black/80">
                   {[
                     "Speech Patterns",
@@ -176,7 +175,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-base text-black/80 mt-4">and overall coherence – <span className="font-bold text-[#20669f]">helping surface early signs of decline that one-time tests might miss. </span></p>
+                <p className="text-base text-black/80 mt-4">and overall coherence — <span className="font-bold text-[#20669f]">helping surface early signs of decline that one-time tests might miss. </span></p>
               </div>
             </div>
           </div>
