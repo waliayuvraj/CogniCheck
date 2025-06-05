@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", occupation: "" });
   const [submitted, setSubmitted] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,16 +26,22 @@ export default function Home() {
     }
   };
 
+  const scrollToDemoForm = () => {
+    nameInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    nameInputRef.current?.focus();
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="w-full flex items-center justify-between px-8" style={{height: 58, borderBottom: '1px solid #d9d9d9', background: 'white'}}>
+      <header className="w-full flex items-center justify-between px-8 sticky top-0 z-30 bg-white" style={{height: 58, borderBottom: '1px solid #d9d9d9', background: 'white'}}>
         <div className="flex items-center gap-3 py-3">
           <Image src="/logo.png" alt="CogniCheck Logo" width={85} height={34} priority />
         </div>
         <button
           className="flex items-center gap-2 px-6 h-8 rounded-lg border border-[#20669f] bg-[#20669f]/20 text-[#20669f] font-medium text-base shadow-none hover:bg-[#20669f]/30 transition-all"
           style={{fontSize: 14, fontWeight: 500}}
+          onClick={scrollToDemoForm}
         >
           {/* Optionally add an icon here if you have one */}
           Stay Updated
@@ -68,6 +75,7 @@ export default function Home() {
                   onChange={handleChange}
                   required
                   disabled={submitted}
+                  ref={nameInputRef}
                 />
                 <input
                   type="tel"
