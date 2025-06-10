@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CogniCheck
+
+CogniCheck is a modern web application for managing users, their details, and call configurations. Built with Next.js, React, and lowdb, it provides a clean, intuitive interface for practitioners and admins to add, edit, and manage user information efficiently.
+
+## Features
+
+- **User Management:**
+  - Add, edit, and delete users with detailed information (name, sex, date of birth, phone, etc.)
+  - Sidebar with searchable, scrollable user list
+  - Click to view or edit user details in a responsive right panel
+  - Inline editing with safe save/cancel flow
+  - Prevents accidental data loss during edits
+
+- **Call Configuration (Planned):**
+  - Set call days, times, and frequency for each user
+  - Track call history and notes
+
+- **Modern UI/UX:**
+  - Responsive, accessible, and visually appealing design
+  - Built with Tailwind CSS and React best practices
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at [http://localhost:3000](http://localhost:3000) (or another port if 3000 is in use).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. **Database:**
+   - User data is stored in a local `users.json` file using [lowdb](https://github.com/typicode/lowdb).
+   - No external database setup required for development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/page.tsx` — Main app UI and logic
+- `src/app/api/users/` — API routes for user CRUD operations
+- `users.json` — Local database file
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+- All development is tracked in the [`waliayuvraj/cognicheck`](https://github.com/waliayuvraj/cognicheck) repository.
+- Please use the `main` branch for all ongoing work.
+- PRs and issues are welcome!
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MIT License. See [LICENSE](LICENSE) for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*CogniCheck — Designed for practitioners. Built for people.*
