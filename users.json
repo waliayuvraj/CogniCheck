@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "j75bvqi6mh",
+      "name": "Yuvraj Walia",
+      "sex": "male",
+      "month": "September",
+      "day": "8",
+      "year": "2001",
+      "countryCode": "+1",
+      "phone": "6478253128",
+      "createdAt": "2025-06-10T19:02:44.495Z"
+    },
+    {
+      "id": "f54lnt1ciu",
+      "name": "Omar Atwa",
+      "sex": "male",
+      "month": "April",
+      "day": "26",
+      "year": "2002",
+      "countryCode": "+1",
+      "phone": "2261234567",
+      "createdAt": "2025-06-10T19:06:54.757Z"
+    }
+  ]
+}
