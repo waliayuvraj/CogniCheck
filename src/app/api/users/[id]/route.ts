@@ -19,9 +19,10 @@ interface UserData {
 const dbFile = join(process.cwd(), 'users.json');
 const dbPromise = JSONFilePreset<{ users: UserData[] }>(dbFile, { users: [] });
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
   const db = await dbPromise;
-  const id = params.id;
+  // Extract the id from the URL
+  const id = req.nextUrl.pathname.split('/').pop();
   const body = await req.json();
   const idx = db.data.users.findIndex(u => u.id === id);
   if (idx === -1) {
