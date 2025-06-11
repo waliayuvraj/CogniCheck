@@ -9,7 +9,17 @@
       "year": "2001",
       "countryCode": "+1",
       "phone": "6478253128",
-      "createdAt": "2025-06-10T19:02:44.495Z"
+      "createdAt": "2025-06-10T19:02:44.495Z",
+      "notes": "asdf",
+      "daysAvailable": [
+        "Friday",
+        "Wednesday",
+        "Monday"
+      ],
+      "frequency": "Monthly",
+      "fromTime": "10:00 AM",
+      "toTime": "03:00 PM",
+      "receivingCalls": false
     },
     {
       "id": "f54lnt1ciu",
@@ -20,7 +30,19 @@
       "year": "2002",
       "countryCode": "+1",
       "phone": "2261234567",
-      "createdAt": "2025-06-10T19:06:54.757Z"
+      "createdAt": "2025-06-10T19:06:54.757Z",
+      "notes": "Mentioned he's a baller"
+    },
+    {
+      "id": "w0p3x3yn7gf",
+      "name": "Bagheera",
+      "sex": "male",
+      "month": "October",
+      "day": "9",
+      "year": "2012",
+      "countryCode": "+1",
+      "phone": "4167863126",
+      "createdAt": "2025-06-11T17:50:31.225Z"
     }
   ]
 }

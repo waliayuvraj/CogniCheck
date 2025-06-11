@@ -1,3 +1,4 @@
+// API route for /api/responses (GET, POST)
 import { NextRequest, NextResponse } from 'next/server';
 import { join } from 'path';
 import { JSONFilePreset } from 'lowdb/node';
