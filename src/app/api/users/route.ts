@@ -1,7 +1,7 @@
 // API route for /api/users (GET, POST)
-import { dbPromise } from 'lib/db';
+import { dbPromise } from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
-import type { User } from 'types/user';
+import type { User } from '@/types/user';
 
 export async function GET() {
   const db = await dbPromise;
