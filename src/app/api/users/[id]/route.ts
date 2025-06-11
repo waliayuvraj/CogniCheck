@@ -1,5 +1,4 @@
 // API route for /api/users/[id] (PUT, can add GET, DELETE)
-import type { User } from '@/types/user';
 import { dbPromise } from '@/lib/db';
 import { NextRequest, NextResponse } from 'next/server';
 

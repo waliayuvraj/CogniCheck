@@ -280,8 +280,12 @@ export default function WebApp() {
                               setSelectedUser(updated);
                               setEditMode(false);
                               setEditUser(null);
-                            } catch (err: any) {
-                              setSaveError(err.message || 'Unknown error');
+                            } catch (err) {
+                              if (err instanceof Error) {
+                                setSaveError(err.message);
+                              } else {
+                                setSaveError('Unknown error');
+                              }
                             } finally {
                               setSaveLoading(false);
                             }
@@ -314,8 +318,12 @@ export default function WebApp() {
                               if (!res.ok) throw new Error('Failed to delete user');
                               setUsers(users => users.filter(u => u.id !== selectedUser.id));
                               setSelectedUser(null);
-                            } catch (err: any) {
-                              setDeleteError(err.message || 'Unknown error');
+                            } catch (err) {
+                              if (err instanceof Error) {
+                                setDeleteError(err.message);
+                              } else {
+                                setDeleteError('Unknown error');
+                              }
                             } finally {
                               setDeleteLoading(false);
                             }
