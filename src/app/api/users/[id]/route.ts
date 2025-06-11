@@ -1,23 +1,7 @@
+// API route for /api/users/[id] (PUT, can add GET, DELETE)
+import type { User } from '../../../types/user';
+import { dbPromise } from '../../../lib/db';
 import { NextRequest, NextResponse } from 'next/server';
-import { join } from 'path';
-import { JSONFilePreset } from 'lowdb/node';
-
-// Define the type for a user
-interface UserData {
-  id: string;
-  name: string;
-  sex: string;
-  month: string;
-  day: string;
-  year: string;
-  countryCode: string;
-  phone: string;
-  createdAt: string;
-}
-
-// DB setup
-const dbFile = join(process.cwd(), 'users.json');
-const dbPromise = JSONFilePreset<{ users: UserData[] }>(dbFile, { users: [] });
 
 export async function PUT(req: NextRequest) {
   const db = await dbPromise;
