@@ -1,23 +1,7 @@
+// API route for /api/users (GET, POST)
+import { dbPromise } from '../../../lib/db';
 import { NextRequest, NextResponse } from 'next/server';
-import { join } from 'path';
-import { JSONFilePreset } from 'lowdb/node';
-
-// Define the type for a user
-interface UserData {
-  id: string;
-  name: string;
-  sex: string;
-  month: string;
-  day: string;
-  year: string;
-  countryCode: string;
-  phone: string;
-  createdAt: string;
-}
-
-// DB setup
-const dbFile = join(process.cwd(), 'users.json');
-const dbPromise = JSONFilePreset<{ users: UserData[] }>(dbFile, { users: [] });
+import type { User } from '../../../types/user';
 
 export async function GET() {
   const db = await dbPromise;
@@ -27,7 +11,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   const db = await dbPromise;
   const body = await req.json();
-  const newUser: UserData = {
+  const newUser: User = {
     id: Math.random().toString(36).slice(2),
     name: body.name,
     sex: body.sex,
